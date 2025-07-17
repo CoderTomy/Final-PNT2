@@ -1,12 +1,12 @@
 <template>
-    <div style="max-width: 700px; margin: 40px auto;">
-        <h1 style="font-size:2em; font-weight:bold;">Conversor Pesos a dólares</h1>
+    <div class="app-container">
+        <h1 class="main-title">Conversor Pesos a Dólares</h1>
         <ConversorInput :monto="monto" @update:monto="monto = $event" />
-            <div v-if="cotizacion">
-        <CotizacionInfo :cotizacion="cotizacion" :fechaCotizacion="fechaCotizacion" :valorConvertido="valorConvertido" />
+        <div v-if="cotizacion">
+            <CotizacionInfo :cotizacion="cotizacion" :fechaCotizacion="fechaCotizacion" :valorConvertido="valorConvertido" />
         </div>
-        <div v-else style="margin-top:20px; color: #888;">Cargando cotización...</div>
-        <hr style="margin-top:30px;" />
+        <div v-else class="loading-text">Cargando cotización...</div>
+        <hr class="divider" />
         <Respuestas />
     </div>
 </template>
@@ -82,8 +82,40 @@ export default
 </script>
 
 <style scoped>
-body
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.app-container
 {
-    font-family: Arial, Helvetica, sans-serif;
+    max-width: 700px;
+    margin: 40px auto;
+    background: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 32px 28px 24px 28px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+.main-title
+{
+    font-size: 2.2em;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: #222;
+    letter-spacing: 0.5px;
+}
+
+.divider
+{
+    margin-top: 30px;
+    border: none;
+    border-top: 1.5px solid #e0e0e0;
+}
+
+.loading-text
+{
+    margin-top: 20px;
+    color: #888;
+    font-size: 1.1em;
+    font-style: italic;
 }
 </style>

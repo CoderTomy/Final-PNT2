@@ -1,8 +1,8 @@
 <template>
-    <div style="margin-top: 30px;">
-        <b>Respuestas</b>
-        <span style="margin-left:10px;">
-            1: C &nbsp; 2: B y C &nbsp; 3: C &nbsp; 4: E &nbsp; 5: C
+    <div class="respuestas-block">
+        <span class="respuestas-title">Respuestas</span>
+        <span class="respuestas-list">
+        1: <b>C</b> &nbsp; 2: <b>B y C</b> &nbsp; 3: <b>C</b> &nbsp; 4: <b>E</b> &nbsp; 5: <b>C</b>
         </span>
     </div>
 </template>
@@ -13,3 +13,23 @@ export default
     name: 'Respuestas'
 }
 </script>
+
+<style scoped>
+.respuestas-block
+{
+    margin-top: 30px;
+    padding: 12px 0 2px 0;
+    font-size: 1.08em;
+    color: #333;
+}
+.respuestas-title
+{
+    font-weight: 600;
+    font-size: 1.13em;
+    margin-right: 12px;
+}
+.respuestas-list
+{
+    letter-spacing: 0.5px;
+}
+</style>
